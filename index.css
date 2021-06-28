@@ -1,0 +1,137 @@
+body{
+    overflow: hidden;
+}
+
+#main-game-display{
+    width : 70vw;
+    height : 100vw;
+}
+
+#game-background{
+    position: absolute;
+    padding: 0;
+    width : 70vw;
+    height : 100%;
+    top : 0;
+    left : 0;
+}
+
+#judge-collision{
+    position : absolute;
+}
+
+#pc-player{
+    position : absolute;
+    bottom : 10%;
+    left : 33%;
+    width : 50px;
+    height : 50px;
+    border-radius : 50%;
+}
+
+#player-img{
+    width : 150%;
+    height : 150%;
+    border-radius : 50%;
+}
+
+#bossHP{
+    position: absolute;
+    left : 2%;
+    top : 3.5%;
+    width : 50%;
+    height : 30px;
+    color: red;
+    background-color: brown;
+}
+
+.bossHPText{
+    position: relative;
+    left : 75%;
+    color : black;
+    font:bold;
+    top :0px;
+    float: left;
+    margin-left: 10px;
+}
+
+#manu{
+    position : absolute;
+    top: 0 ;
+    right : 0;
+    width : 30vw;
+    height : 100%;
+    background-color: black;
+}
+
+.bullet{
+    position: absolute;
+    width : 20px;
+    height : 20px;
+    backface-visibility: hidden;
+}
+
+.bullet2{
+    position: absolute;
+    width : 35px;
+    height : 35px;
+    backface-visibility: hidden;
+}
+
+.bullet3{
+    position: absolute;
+    width : 30px;
+    height : 500px;
+    backface-visibility: hidden;
+}
+
+.enemy{
+    position: absolute;
+    width : 120px;
+    height : 120px;
+}
+
+.stageText{
+    color:white;
+    text-align:center;
+    width:100%;
+}
+
+.status{
+    position: relative;
+    color: white;
+    width:100%;
+    left : 10%;
+    margin-top: 15%;
+}
+
+.item{
+    position: absolute;
+    width : 20px;
+    height : 20px;
+    left : 0;
+    bottom : 0;
+    backface-visibility: hidden;
+}
+
+.hp{
+    width : 25px;
+    height : 25px;
+}
+
+#power{
+    color: white;
+}
+
+#point{
+    color: white;
+}
+
+
+.bakuhatu{
+    position: absolute;
+    width : 35px;
+    height : 35px;
+    left : 0;
+    bottom : 0;
+}
