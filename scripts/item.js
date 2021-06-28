@@ -26,8 +26,8 @@ function itemMove(){
         item[count].y -= 5;
         item[count].location.style.bottom = item[count].y + "px";
 
-        if((item[count].y <= player.ownPosition.y + 30 && item[count].y >= player.ownPosition.y - 30) &&
-        (item[count].x <= player.ownPosition.x + 30 && item[count].x >= player.ownPosition.x - 30)){
+        if((item[count].y <= player.ownPosition.y + mapLength && item[count].y >= player.ownPosition.y - mapLength) &&
+        (item[count].x <= player.ownPosition.x + mapLength && item[count].x >= player.ownPosition.x - mapLength)){
             document.body.removeChild(item[count].location);
             item.splice(count, 1);
             if(bulletPower < 100){

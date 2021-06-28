@@ -35,33 +35,18 @@ BOSS();
 function BOSS(){
     let enemyBulletTimeout = [];
     callEnemy(gameDisplayX/2, gameDisplayY, objectImgSrc["Enemy_BOSS"]);//5500
+    oldIndexX = Math.round((gameDisplayX/2)/mapLength) - 1;
     enemyBulletTimeout.push(setTimeout(function (){controllEnemyBullet(500, -1, bulletImgSrc["1"], "bullet", 5, 500, 5);}, 1000));
     enemyBulletTimeout.push(setTimeout(function (){controllEnemyBullet(500, -1, bulletImgSrc["2"], "bullet2", 5, 1000, 35);}, 1000));
-    setMoveTime(1000);
-    setMove(15, 20, 5); //移動したいマップ上の位置を引数に渡す *1,2引数は0~30
+    
+    move(oldIndexX, 20, 5, 1000)
 
-    setMoveTime(1000);
-    setMove(5, 20, 5);
+    controllMoving();
+}
 
-    setMoveTime(1000);
-    setMove(20, 20, 5);
-
-    setMoveTime(1000);
-    setMove(5, 20, 5);
-
-    setMoveTime(1000);
-    setMove(20, 20, 3);
-
-    setMoveTime(1000);
-    setMove(15, 15, 2);
-
-    setMoveTime(500);
-    setMove(25, 15, 5);
-
-    setMoveTime(500);
-    setMove(5, 15, 5);
-
-    controllMoving(); //最後に実行
+function move(x, y, frame, interval){
+    setTime.push(interval);
+    setMove(x, y, frame);
 }
 
 function controllMoving(){

@@ -3,7 +3,7 @@ let enemySpawnArray = []; //敵の情報を格納する配列
 let enemyMoveTimeouut; //動きのコールバック関数を制御
 
 const bossHPText = document.getElementsByClassName("bossHPText"); //HPバーを実装
-let oldIndexX = 15;
+let oldIndexX = 0;
 let oldIndexY = 30;
 
 /**
@@ -92,6 +92,8 @@ function enemyMove(mapIndexX, mapIndexY, frame=100){
         tempMovingX = Math.round((enemySpawnArray[enemySpawnArray.length-1].x + mapPosiX/2)/mapLength) - 2;
         tempMovingY = Math.round((enemySpawnArray[enemySpawnArray.length-1].y + mapPosiY/2)/mapLength);
     }
+    console.log("x : "+tempMovingX);
+    console.log("y : "+tempMovingY);
 
     //mapを更新
     mapObjection("BOSS", enemySpawnArray[enemySpawnArray.length - 1].x, enemySpawnArray[enemySpawnArray.length - 1].y)
@@ -100,7 +102,7 @@ function enemyMove(mapIndexX, mapIndexY, frame=100){
      * 敵の現在のマップ上の位置と目的の位置を比較
      * 一致している時enemyMove関数を終了
      */
-    if(tempMovingX == mapIndexX && tempMovingY == mapIndexY){
+    if((tempMovingX >= mapIndexX - 1 && tempMovingX <= mapIndexX + 1) && tempMovingY == mapIndexY){
         clearTimeout(enemyMoveTimeouut); //コールバック関数を停止
         enemyMoveTimeouut = null;
         oldIndexX = mapIndexX; //敵の位置を目的の位置にセット
@@ -122,8 +124,8 @@ function enemyMove(mapIndexX, mapIndexY, frame=100){
  * @param {*} objY オブジェクトのy座標
  */
 function mapObjection(obj, objX, objY){
-    let indexX = Math.round(objX/30);
-    let indexY = Math.round(objY/30);
+    let indexX = Math.round(objX/mapLength);
+    let indexY = Math.round(objY/mapLength);
     if(obj === "BOSS") map[indexX][indexY] = "BOSS";
     else if(obj === "player") map[indexX][indexY] = "player";
 }
