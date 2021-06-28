@@ -6,5 +6,5 @@ Web言語(html,css,javascript)で開発した簡素なシューティングゲ�
 
 ### 操作説明
 
-WASD : 移動
-Enter : 弾を発射
+・WASD : 移動 </br>
+・Enter : 弾を発射
